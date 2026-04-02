@@ -1,0 +1,71 @@
+#Task 1
+s = input()
+
+max_str = ''
+current = s[0]
+
+for i in range(1, len(s)):
+    if s[i] > s[i - 1]:
+        current += s[i]
+    else:
+        if len(current) > len(max_str):
+            max_str = current
+        current = s[i]
+
+if len(current) > len(max_str):
+    max_str = current
+
+print(max_str)
+
+#Task 2
+words = input().split()
+
+counts = {}
+
+for word in words:
+    if word in counts:
+        counts[word] += 1
+    else:
+        counts[word] = 1
+
+for word in counts:
+    print(f"{word}: {counts[word]}")
+
+#Task 3
+words = input().split()
+
+counts = {}
+
+for word in words:
+    if word in counts:
+        counts[word] += 1
+    else:
+        counts[word] = 1
+
+for word in counts:
+    print(f"{word}: {counts[word]}")
+    
+#Task 4
+words = input().split()
+
+longest = words[0]
+
+for word in words:
+    if len(word) > len(longest):
+        longest = word
+
+print(longest)
+
+#Task 5
+s = input()
+
+digits = ''
+
+for ch in s:
+    if ch.isdigit():
+        digits += ch
+
+if digits == '':
+    print(0)
+else:
+    print(digits)
