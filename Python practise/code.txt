@@ -1,0 +1,50 @@
+#task 1
+a = [int(x) for x in input().split()]
+b = [x * 2 for x in a if x % 2 == 0]
+print(*b)
+
+#task 2
+s = input()
+cr = s[0]
+lon = s[0]
+for i in range(1, len(s)):
+    if s[i] > s[i - 1]:
+        cr += s[i]
+    else:
+        cr = s[i]
+    
+    if len(cr) > len(lon):
+        lon = cr
+print(lon)
+
+#task 3
+words = input().split()
+count = {}
+for word in words:
+    if word in count:
+        count[word] += 1
+    else:
+        count[word] = 1
+    
+for word in count:
+    print(f"{word}: {count[word]}")
+
+#task 4
+words = input().split()
+lon = ""
+for word in words:
+    if len(word) > len(lon):
+        lon = word
+print(lon)
+
+#task 5
+s = input()
+d = ""
+
+for c in s:
+    if c.isdigit():
+        d += c
+if d:
+    print(d)
+else:
+    print(0)
